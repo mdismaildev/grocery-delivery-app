@@ -6,15 +6,12 @@ import Deals from '../pages/Deals';
 import ProductsDetails from '../pages/ProductsDetails';
 import MyOrders from '../pages/MyOrders';
 import Login from '../pages/register/Login';
+import Register from '../pages/register/Register';
+import PrivetRoute from './PrivetRoute';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login />,
-  },
-
-  {
-    path: '/shop',
     element: <MainLayout></MainLayout>,
     children: [
       {
@@ -35,9 +32,21 @@ const router = createBrowserRouter([
       },
       {
         path: 'my-orders',
-        element: <MyOrders />,
+        element: (
+          <PrivetRoute>
+            <MyOrders />
+          </PrivetRoute>
+        ),
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
 ]);
 

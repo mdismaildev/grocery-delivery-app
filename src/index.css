@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@100..900&display=swap');
 
-@theme {
+body {
+  background-color: #FAF7F2;
+}
 
+@theme {
   --font-sans: 'Outfit', sans-serif;
   --font-title: 'DM Serif Display', serif;
 }
@@ -9,4 +12,18 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
   themes: false;
+}
+
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
