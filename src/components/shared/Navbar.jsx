@@ -24,7 +24,6 @@ const Navbar = () => {
       });
   };
 
-  console.log('your user', user?.displayName, user?.photoURL);
   return (
     <div className="border-b border-[#E5E7EB] bg-white">
       <div className="flex items-center justify-between navbar bg-base-100 px-4 md:px-8 py-3  container mx-auto">
@@ -149,7 +148,7 @@ const Navbar = () => {
                 <div className="w-9 h-9 rounded-full bg-[#0B3B24] text-white flex items-center justify-center font-semibold text-lg overflow-hidden">
                   {user?.photoURL ? (
                     <img
-                      src={user.photoURL}
+                      src={user?.photoURL}
                       alt="User"
                       className="w-full h-full object-cover"
                     />
@@ -167,7 +166,7 @@ const Navbar = () => {
 
               <ul
                 tabIndex={0}
-                className="dropdown-content z-1 menu p-2 shadow-lg bg-base-100 rounded-box w-48 mt-2 border border-gray-100 text-lg text-[#52525C]"
+                className="dropdown-content z-1 menu p-2 shadow-lg rounded-box w-48 mt-2 border border-gray-100 text-lg text-[#52525C] bg-white"
               >
                 <li>
                   <NavLink to="/my-orders">My Orders</NavLink>
